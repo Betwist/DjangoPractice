@@ -8,4 +8,3 @@ def index(request):
 
 def categories(request, catid):
     return HttpResponse(f'<h1>Виды Чобанов</h1><p>{catid}<p>')
-
