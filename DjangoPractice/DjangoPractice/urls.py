@@ -15,11 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from django.conf.urls.static import static
 from django.contrib import admin
 
 from django.urls import path, include
+
+from Choban.views import pageNotFound
+from DjangoPractice import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Choban.ursl'))
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = pageNotFound
