@@ -1,9 +1,15 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect
 
+from .models import *
 
+menu = ['О сайте', 'Добавить чобана', 'Обратная связь', 'Войти']
 def index(request):
-    return HttpResponse('<h1>Страница Чобанов<h1>')
+    posts = Choban.objects.all()
+    return render(request, 'Choban/index.html', {'posts':posts, 'menu': menu, 'title': 'Главная страница'})
+
+def about(request):
+    return render(request, 'Choban/about.html', {'menu': menu, 'title' : 'О сайте'})
 
 
 def categories(request, catid):

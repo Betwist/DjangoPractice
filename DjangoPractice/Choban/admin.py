@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+# from django.contrib import admin
+#
+# from Choban.models import Choban
+#
+#
+# class AuthorAdmin(admin.ModelAdmin):
+#     pass
+#
+#
+# admin.site.register(Choban, AuthorAdmin)
